@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StyleHub</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg);
+            color: var(--text);
+            transition: background-color 0.3s, color 0.3s;
+        }
+        :root[data-theme='light'] {
+            --bg: #ffffff;
+            --text: #000000;
+        }
+        :root[data-theme='dark'] {
+            --bg: #1e1e1e;
+            --text: #ffffff;
+        }
+        header {
+            padding: 1em;
+            text-align: center;
+            background-color: #f1f1f1;
+        }
+        .theme-toggle {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+        }
+        .products {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1em;
+            padding: 1em;
+        }
+        .product {
+            border: 1px solid #ccc;
+            padding: 1em;
+            width: 200px;
+            text-align: center;
+        }
+        .product img {
+            width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <button class="theme-toggle" onclick="toggleTheme()">Toggle Theme</button>
+    <header>
+        <h1>StyleHub - Clothing Store</h1>
+    </header>
+    <main class="products">
+        <div class="product">
+            <img src="https://via.placeholder.com/200x250.png?text=Product+1" alt="Product 1">
+            <h3>Floral Dress</h3>
+            <p>₹999</p>
+        </div>
+        <div class="product">
+            <img src="https://via.placeholder.com/200x250.png?text=Product+2" alt="Product 2">
+            <h3>Casual Top</h3>
+            <p>₹599</p>
+        </div>
+        <div class="product">
+            <img src="https://via.placeholder.com/200x250.png?text=Product+3" alt="Product 3">
+            <h3>Summer Shorts</h3>
+            <p>₹799</p>
+        </div>
+    </main>
+    <script>
+        function toggleTheme() {
+            const current = document.documentElement.getAttribute("data-theme");
+            document.documentElement.setAttribute("data-theme", current === "light" ? "dark" : "light");
+        }
+    </script>
+</body>
+</html>
